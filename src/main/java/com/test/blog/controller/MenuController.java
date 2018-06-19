@@ -23,7 +23,6 @@ public class MenuController {
 
 	@Autowired
 	private MenuService service;
-
 	
 	@RequestMapping(value = MAPPING+"{action}", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView aboutMe(@RequestParam Map<String, Object> paramMap ,@PathVariable String action,
@@ -44,7 +43,35 @@ public class MenuController {
 			
 		}else if("shoes".equalsIgnoreCase(action)) {
 			
+		}else if("clothing_insert".equalsIgnoreCase(action)) {
+			
+		}else if("shoes_insert".equalsIgnoreCase(action)) {
+			
+		}else if("bag_insert".equalsIgnoreCase(action)) {
+			
+		}else if("acc_insert".equalsIgnoreCase(action)) {
+			
+		}else if("etc_insert".equalsIgnoreCase(action)) {
+			
+		}else if("news_insert".equalsIgnoreCase(action)) {
+			
+		}else if("aboutMe_insert".equalsIgnoreCase(action)) {
+			
+		}else if("clothing_edit".equalsIgnoreCase(action)) {
+			
+		}else if("aboutMe_edit".equalsIgnoreCase(action)) {
+			
+		}else if("acc_edit".equalsIgnoreCase(action)) {
+			
+		}else if("bag_edit".equalsIgnoreCase(action)) {
+			
+		}else if("etc_edit".equalsIgnoreCase(action)) {
+			
+		}else if("news_edit".equalsIgnoreCase(action)) {
+			
 		}else if("subscribeManage".equalsIgnoreCase(action)) {
+			
+		}else if("shoes_edit".equalsIgnoreCase(action)) {
 			
 		}
 		
@@ -54,5 +81,4 @@ public class MenuController {
 		modelandView.addObject("resultList",resultList);
 		return modelandView;
 	}
-	
 }

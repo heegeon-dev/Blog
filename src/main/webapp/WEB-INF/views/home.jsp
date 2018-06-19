@@ -92,6 +92,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                 		<%= userId %>로 로그인됨.<br>
                 		<input type="submit" onclick="<script>  </script>" value="로그아웃">
                 		  </form>
+                		 
                 	<%}else{ %>
                 	
                 <form class="form-horizontal" action="<%=host%>/LoginStatus2"  method="get" accept-charset="UTF-8">
@@ -122,7 +123,7 @@ and is wrapped around the whole page content, except for the footer in this exam
             magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sedtellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
           <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
           <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
-          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white">1</span></button></p>
+          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Comments </b> <span class="w3-tag w3-white">1</span></button></p>
           <p class="w3-clear"></p>
           <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
             <hr>
