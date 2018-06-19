@@ -18,6 +18,8 @@
 h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
 body {font-family: "Open Sans"}
 </style>
+
+
 <body class="w3-light-grey">
 
 <!-- Navigation bar with social media icons -->
@@ -95,10 +97,49 @@ and is wrapped around the whole page content, except for the footer in this exam
 	</nav>
 	
  <!-- Blog entries -->
-    <div class="w3-col l8 s12">
-    
+	<div class="w3-col l8 s12">
+	<c:forEach items="${resultList}" var="resultData" varStatus="loop">
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>${resultData.TITLE}</h3>
+          <h5>Title description, <span class="w3-opacity">April 23, 2016</span></h5>
+        </div>
+
+        <div class="w3-justify">
+          <img src="<c:url value='/resources/images/man_hat.jpg'/>" alt="Men in Hats" style="width:100%" class="w3-padding-16">
+          <p>${resultData.CONTENTS }</p>
+          <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo2')"><b>Replies Â </b> <span class="w3-tag w3-white">2</span></button></p>
+          <p class="w3-clear"></p>
+          
+          <!-- Example of comment field -->
+          <div id="demo2" style="display:none">
+            <div class="w3-row">
+              <hr>
+              <div class="w3-col l2 m3">
+                <img src="<c:url value='/resources/images/girl_train.jpg'/>" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Amber <span class="w3-opacity w3-medium">April 26, 2015, 10:52 PM</span></h4>
+                <p>Love your blog page! Simply the best! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
+              </div>
+            </div>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="<c:url value='/resources/images/girl.jpg'/>" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Angie <span class="w3-opacity w3-medium">April 23, 2015, 9:12 PM</span></h4>
+                <p>Love hats!!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  END w3-container w3-white w3-margin w3-padding-large -->
+      </c:forEach>
+      
  <!-- Blog entry -->
-   
 <form class="form-horizontal" role="form" method="post" action="index.php">
 	<div class="form-group">
 		<label for="name" class="col-sm-2 control-label">Subject</label>

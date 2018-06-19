@@ -1,8 +1,12 @@
-package com.test.blog;
+package com.test.blog.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class MemberService {
 	String email;
 	String password;
+	
 	
 	
 	public String getPassword() {

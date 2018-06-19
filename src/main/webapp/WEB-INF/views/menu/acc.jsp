@@ -97,7 +97,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 	
  <!-- Blog entries -->
     <div class="w3-col l8 s12">
-    
  <!-- Blog entry -->
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
