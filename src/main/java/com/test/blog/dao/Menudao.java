@@ -11,7 +11,7 @@ public class Menudao {
 	private SqlSessionTemplate sqlSession;
 
 	public Object getList(String sqlMapId, Object dataMap) {
-		Object result = sqlSession.selectList(sqlMapId, dataMap);
+		Object result = sqlSession.selectList(sqlMapId, dataMap); 
 
 		return result;
 	}

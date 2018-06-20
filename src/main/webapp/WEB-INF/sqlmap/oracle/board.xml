@@ -26,17 +26,16 @@
 	</select>
 
 	<select id="read" resultType="Map" parameterType="Map">
-	    select 
-			CATEGORY_SEQ <!-- 카테고리_SEQ -->
-			, BOARD_SEQ <!-- 글 SEQ -->
-			, ID <!-- ID-->
-			, TITLE <!-- 글 제목 -->
-			, CONTENTS <!-- 글 내용 -->
-			, UPLOAD_DATE <!-- 게시일 -->
-			, VIEWS <!-- 조회수 -->
-		from BOARD
-		where 1=1
-		order by UPLOAD_DATE
+	
+		select
+			b.title ,	<!-- 글 제목 -->
+			b.contents ,		<!-- 글 내용 -->
+			b.upload_date ,	<!-- 게시일 -->
+			bi.img_name		<!-- 이미지 이름 -->
+		from BOARD b INNER JOIN board_img_rel bir
+		ON b.BOARD_SEQ = bir.BOARD_SEQ
+		INNER JOIN board_img bi
+		ON bir.IMG_SEQ = bi.IMG_SEQ
 	</select>
 
 	<insert id="merge" parameterType="Map">

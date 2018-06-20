@@ -105,12 +105,12 @@ and is wrapped around the whole page content, except for the footer in this exam
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
           <h3>${resultData.TITLE}</h3>
-          <h5>Title description, <span class="w3-opacity">April 23, 2016</span></h5>
+          <h5>Title description, <span class="w3-opacity">${resultData.UPLOAD_DATE}</span></h5>
         </div>
 
         <div class="w3-justify">
-          <img src="<c:url value='/resources/images/man_hat.jpg'/>" alt="Men in Hats" style="width:100%" class="w3-padding-16">
-          <p>${resultData.CONTENTS }</p>
+          <img src="<c:url value='${resultData.IMG_NAME}'/>" alt="Men in Hats" style="width:100%" class="w3-padding-16">
+          <p>${resultData.CONTENTS}</p>
           <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
           <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo2')"><b>Replies Â </b> <span class="w3-tag w3-white">2</span></button></p>
           <p class="w3-clear"></p>
