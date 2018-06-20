@@ -55,6 +55,9 @@ public class MenuController {
 			
 		}else if("news_insert".equalsIgnoreCase(action)) {
 			
+		}else if("news_register".equalsIgnoreCase(action)) {
+			resultMap = (Map<String,Object>) service.getObject("board.insert", paramMap);
+			viewName = MAPPING + "news";
 		}else if("aboutMe_insert".equalsIgnoreCase(action)) {
 			
 		}else if("clothing_edit".equalsIgnoreCase(action)) {

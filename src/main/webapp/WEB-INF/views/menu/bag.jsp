@@ -109,7 +109,11 @@ and is wrapped around the whole page content, except for the footer in this exam
         </div>
 
         <div class="w3-justify">
+<<<<<<< HEAD
           <img src="<c:url value='${resultData.IMG_NAME}'/>" alt="Men in Hats" style="width:100%" class="w3-padding-16">
+=======
+          <img src="<c:url value='/resources/images/man_hat.jpg'/>" alt="Men in Hats" style="width:100%" class="w3-padding-16">
+>>>>>>> origin/master
           <p>${resultData.CONTENTS}</p>
           <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
           <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo2')"><b>Replies Â </b> <span class="w3-tag w3-white">2</span></button></p>

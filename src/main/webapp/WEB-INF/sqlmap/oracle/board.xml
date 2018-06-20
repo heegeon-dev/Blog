@@ -38,6 +38,12 @@
 		ON bir.IMG_SEQ = bi.IMG_SEQ
 	</select>
 
+	<insert id="insert" parameterType="Map">
+		INSERT INTO 
+		board(CATEGORY_SEQ, BOARD_SEQ, ID, TITLE, CONTENTS) 
+		VALUES('6',SEQ_BOARD.nextval,'Inhog',#{TITLE},#{CONTENTS})
+	</insert>
+
 	<insert id="merge" parameterType="Map">
 		<selectKey keyProperty="MEMBER_SEQ" resultType="String" order="AFTER">	<!-- order="BEFORE" --> 
 			SELECT MEMBER_SEQ
