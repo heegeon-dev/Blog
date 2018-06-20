@@ -32,7 +32,7 @@ public class MenuController {
 		List<Object> resultList = new ArrayList<Object>();
 		
 		if("news".equalsIgnoreCase(action)){
-			
+			resultList = (List<Object>) service.getList("board.read",paramMap);
 		}else if("acc".equalsIgnoreCase(action)) {
 			
 		}else if("bag".equalsIgnoreCase(action)) {
@@ -56,7 +56,10 @@ public class MenuController {
 		}else if("news_insert".equalsIgnoreCase(action)) {
 			
 		}else if("news_register".equalsIgnoreCase(action)) {
-			resultMap = (Map<String,Object>) service.getObject("board.insert", paramMap);
+			service.getObject("board.insert_board", paramMap);
+			service.getObject("board.insert_board_img", paramMap);
+			service.getObject("board.insert_board_img_rel", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
 			viewName = MAPPING + "news";
 		}else if("aboutMe_insert".equalsIgnoreCase(action)) {
 			
@@ -71,7 +74,7 @@ public class MenuController {
 		}else if("etc_edit".equalsIgnoreCase(action)) {
 			
 		}else if("news_edit".equalsIgnoreCase(action)) {
-			
+			resultMap = (Map<String, Object>) service.getObject("board.edit_read", paramMap);
 		}else if("subscribeManage".equalsIgnoreCase(action)) {
 			
 		}else if("shoes_edit".equalsIgnoreCase(action)) {

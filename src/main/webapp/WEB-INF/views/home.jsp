@@ -72,7 +72,7 @@ and is wrapped around the whole page content, except for the footer in this exam
           <li><a href="<c:url value='/menu/etc'/>">ETC</a></li>
         </ul>
       </li>
-        <li><a href="<c:url value='/menu/news'/>">News</a></li>
+        <li><a href="<c:url value='/menu/news?CATEGORY_SEQ=6'/>">News</a></li>
         <li><a href="<c:url value='/menu/aboutMe'/>">About me</a></li>
       </ul>
       

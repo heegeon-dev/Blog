@@ -95,7 +95,7 @@ and is wrapped around the whole page content, except for the footer in this exam
   	</div>
 	</nav>
 	
-	<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="<c:url value ='/menu/news_register'/>" >
+	<form class="form-horizontal" role="form" method="post" action="<c:url value ='/menu/news_register?CATEGORY_SEQ=6'/>" >
 		<label for="message" class="col-sm-2 control-label">Title</label>
 		<div class="col-sm-9" style = "margin:2px">
 			<textarea class="form-control" rows="1" name="TITLE" id = "TITLE" placeholder = "제목을 입력하세요."></textarea>
