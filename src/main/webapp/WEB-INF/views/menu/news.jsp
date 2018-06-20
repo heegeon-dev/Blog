@@ -11,7 +11,7 @@
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
           <h3>${resultData.TITLE}</h3>
-          <h5>Title description, <span class="w3-opacity">${resultData.UPLOAD_DATE}</span></h5>
+          <span class="w3-opacity">${resultData.UPLOAD_DATE}</span>
         </div>
 
         <div class="w3-justify">
