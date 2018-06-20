@@ -28,6 +28,7 @@
 	<select id="read" resultType="Map" parameterType="Map">
 	
 		select
+			b.CATEGORY_SEQ, <!-- 글 카테고리 -->
 			b.title ,	<!-- 글 제목 -->
 			b.contents ,		<!-- 글 내용 -->
 			b.upload_date ,	<!-- 게시일 -->
@@ -36,13 +37,14 @@
 		ON b.BOARD_SEQ = bir.BOARD_SEQ
 		INNER JOIN board_img bi
 		ON bir.IMG_SEQ = bi.IMG_SEQ
+		WHERE b.CATEGORY_SEQ = #{CATEGORY_SEQ}
 	</select>
 
-	<insert id="insert" parameterType="Map">
+<!-- 	<insert id="insert" parameterType="Map">
 		INSERT INTO 
 		board(CATEGORY_SEQ, BOARD_SEQ, ID, TITLE, CONTENTS) 
 		VALUES('6',SEQ_BOARD.nextval,'Inhog',#{TITLE},#{CONTENTS})
-	</insert>
+	</insert> -->
 
 	<insert id="merge" parameterType="Map">
 		<selectKey keyProperty="MEMBER_SEQ" resultType="String" order="AFTER">	<!-- order="BEFORE" --> 
