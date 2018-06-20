@@ -38,17 +38,18 @@ and is wrapped around the whole page content, except for the footer in this exam
         <li><a href="<c:url value='/home'/>">Home</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Fashion <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="<c:url value='/menu/clothing?CATEGORY_SEQ=4'/>">Clothing</a></li>
-          <li><a href="<c:url value='/menu/shoes?CATEGORY_SEQ=7'/>">Shoes</a></li>
-          <li><a href="<c:url value='/menu/bag?CATEGORY_SEQ=3'/>">Bag</a></li>
-          <li><a href="<c:url value='/menu/acc?CATEGORY_SEQ=2'/>">Accessory</a></li>
-          <li><a href="<c:url value='/menu/etc?CATEGORY_SEQ=5'/>">ETC</a></li>
+          <li><a href="<c:url value='/menu/clothing/clothing?CATEGORY_SEQ=4'/>">Clothing</a></li>
+          <li><a href="<c:url value='/menu/shoes/shoes?CATEGORY_SEQ=7'/>">Shoes</a></li>
+          <li><a href="<c:url value='/menu/bag/bag?CATEGORY_SEQ=3'/>">Bag</a></li>
+          <li><a href="<c:url value='/menu/acc/acc?CATEGORY_SEQ=2'/>">Accessory</a></li>
+          <li><a href="<c:url value='/menu/etc/etc?CATEGORY_SEQ=5'/>">ETC</a></li>
         </ul>
       </li>
-        <li><a href="<c:url value='/menu/news?CATEGORY_SEQ=6'/>">News</a></li>
-        <li><a href="<c:url value='/menu/aboutMe?CATEGORY_SEQ=1'/>">About me</a></li>
+        <li><a href="<c:url value='/menu/news/news?CATEGORY_SEQ=6'/>">News</a></li>
+        <li><a href="<c:url value='/menu/aboutMe/aboutMe?CATEGORY_SEQ=1'/>">About me</a></li>
         </ul>
       <ul class="nav navbar-nav navbar-right">
+         <li><a href="<c:url value='/signUp/signUp'/>">Sign Up</a>
          <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login</a>
                 <div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
                		<% String userId=(String)session.getAttribute("userId"); %>

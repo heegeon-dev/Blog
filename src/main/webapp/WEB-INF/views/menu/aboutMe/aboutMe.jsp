@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
 	<div class="w3-col l8 s12">
-    	<p class="w3-left" style = "margin-left: 16px"><a href="<c:url value = '/menu/aboutMe_insert'/>"><button class="w3-button w3-black" ><b>POST</b></button></a></p>
+    	<p class="w3-left" style = "margin-left: 16px"><a href="<c:url value = '/menu/aboutMe/insert'/>"><button class="w3-button w3-black" ><b>POST</b></button></a></p>
  	</div>
     <!-- About me Main -->
     <div class="w3-col l8 s12">

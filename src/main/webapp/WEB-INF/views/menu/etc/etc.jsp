@@ -2,20 +2,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
 	<div class="w3-col l8 s12">
-    	<p class="w3-left" style = "margin-left: 16px"><a href="<c:url value = '/menu/shoes_insert'/>"><button class="w3-button w3-black" ><b>POST</b></button></a></p>
- 	</div>
+    	<p class="w3-left" style = "margin-left: 16px"><a href="<c:url value = '/menu/etc/insert'/>"><button class="w3-button w3-black" ><b>POST</b></button></a></p>
+    </div>
  <!-- Blog entries -->
     <div class="w3-col l8 s12">
     
  <!-- Blog entry -->
    
 <form class="form-horizontal" role="form" method="post" action="index.php">
-<!-- 	<div class="form-group"> -->
-<!-- 		<label for="name" class="col-sm-2 control-label">Subject</label> -->
-<!-- 		<div class="col-sm-9"> -->
-<!-- 			<input type="text" class="form-control" id="name" name="name" value=""> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
+	<div class="form-group">
+		<label for="name" class="col-sm-2 control-label">Subject</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control" id="name" name="name" value="">
+		</div>
+	</div>
 
 	<div class="form-group">
 		<label for="message" class="col-sm-2 control-label">Contents</label>
@@ -39,5 +39,6 @@
   </ul>
 </form>      
  
-   <!-- END BLOG ENTRIES -->
+      
+    <!-- END BLOG ENTRIES -->
     </div>

@@ -3,7 +3,7 @@
 <%@ page session="true" %>
  <!-- Blog entries -->
  <div class="w3-col l8 s12">
-    	<p class="w3-left" style = "margin-left: 16px"><a href="<c:url value = '/menu/clothing_insert'/>"><button class="w3-button w3-black" ><b>POST</b></button></a></p>
+    	<p class="w3-left" style = "margin-left: 16px"><a href="<c:url value = '/menu/clothing/insert'/>"><button class="w3-button w3-black" ><b>POST</b></button></a></p>
  </div>
     <div class="w3-col l8 s12">
     

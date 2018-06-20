@@ -3,13 +3,13 @@ package com.test.blog.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.test.blog.dao.Menudao;
+import com.test.blog.dao.Sharedao;
 
 @Service
-public class MenuService {
+public class newsService {
 
 	@Autowired
-	private Menudao dao;
+	private Sharedao dao;
 	
 	public Object getList(String sqlMapId, Object dataMap) {
 		Object resultData = dao.getList(sqlMapId,dataMap);
