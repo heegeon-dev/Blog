@@ -34,15 +34,15 @@ public class MenuController {
 		if("news".equalsIgnoreCase(action)){
 			resultList = (List<Object>) service.getList("board.read",paramMap);
 		}else if("acc".equalsIgnoreCase(action)) {
-			
+			resultList = (List<Object>) service.getList("board.read",paramMap);
 		}else if("bag".equalsIgnoreCase(action)) {
 			resultList = (List<Object>) service.getList("board.read",paramMap);
 		}else if("clothing".equalsIgnoreCase(action)) {
-			
+			resultList = (List<Object>) service.getList("board.read",paramMap);
 		}else if("etc".equalsIgnoreCase(action)) {
-			
+			resultList = (List<Object>) service.getList("board.read",paramMap);
 		}else if("shoes".equalsIgnoreCase(action)) {
-			
+			resultList = (List<Object>) service.getList("board.read",paramMap);
 		}else if("clothing_insert".equalsIgnoreCase(action)) {
 			
 		}else if("shoes_insert".equalsIgnoreCase(action)) {
