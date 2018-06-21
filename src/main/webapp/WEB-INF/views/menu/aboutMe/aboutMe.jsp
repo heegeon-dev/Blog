@@ -6,21 +6,20 @@
  	</div>
     <!-- About me Main -->
     <div class="w3-col l8 s12">
-    
+    <c:forEach items="${resultList}" var="resultData" varStatus="loop">
     <!-- Blog entry -->
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
-          <h3>WHO AM I</h3> </div>
+          <h3>${resultData.TITLE}</h3>
+          <span class="w3-opacity">${resultData.UPLOAD_DATE}</span> 
+          </div>
         <div class="w3-justify">
-          <img src="<c:url value='/resources/images/avatar_girl2.jpg'/>" alt="Jane" style="width:100%" class="w3-grayscale">
-          <hr>
-          <p><strong>Hello!</strong>.</p>
-          <p>Just me, myself and I, exploring the universe of uknownment.
-           I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. 
-           I want to share my world with you.</p>
+          <a href = "<c:url value = '/menu/aboutMe/edit?BOARD_SEQ=${resultData.BOARD_SEQ}'/>"><img src="<c:url value='/resources/images/${resultData.IMG_NAME}'/>" alt="Runway" style="width:100%" class="w3-padding-16"></a>
+          <p>${resultData.CONTENTS}</p>
       </div>
       </div>
       <hr>
+      </c:forEach>
 <form class="form-horizontal" role="form" method="post" action="index.php">
 	<div class="form-group">
 		<label for="message" class="col-sm-2 control-label">Contents</label>

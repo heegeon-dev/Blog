@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.test.blog.service.clothingService;
+import com.test.blog.service.ShareService;
 
 @Controller
 public class clothingController {
@@ -22,19 +22,30 @@ public class clothingController {
 	private final static String MAPPING = "/menu/clothing/";
 
 	@Autowired
-	private clothingService service;
+	private ShareService service;
 	
 	@RequestMapping(value = MAPPING+"{action}", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView aboutMe(@RequestParam Map<String, Object> paramMap ,@PathVariable String action,
-			ModelAndView modelandView) {
+	public ModelAndView actionMethod(@RequestParam Map<String, Object> paramMap ,@PathVariable String action,
+			ModelAndView modelandView, String sqlMapId) {
 		String viewName = MAPPING + action;
 		Map<String,Object> resultMap = new HashMap<String, Object>();
 		List<Object> resultList = new ArrayList<Object>();
 		
 		if("clothing".equalsIgnoreCase(action)){
-			resultList = (List<Object>) service.getList("board.read",paramMap);
-		}else if("edit".equalsIgnoreCase(action)) {
-		}else if("insert".equalsIgnoreCase(action)) {
+			resultList = (List<Object>) service.getList(sqlMapId,paramMap);
+		}else if("edit_register".equalsIgnoreCase(action)) {
+			resultList = (List<Object>) service.edit_register(sqlMapId, paramMap);
+			viewName = MAPPING + "clothing";
+		}else if("insert_register".equalsIgnoreCase(action)) {
+			resultList = (List<Object>) service.insert_register(sqlMapId, paramMap);
+			viewName = MAPPING + "clothing";
+		}else if("delete_register".equalsIgnoreCase(action)) {
+			resultList = (List<Object>) service.delete_register(sqlMapId, paramMap);
+			viewName = MAPPING + "clothing";
+		}else if("insert".equalsIgnoreCase(action)){
+			
+		}else if("edit".equalsIgnoreCase(action)){
+			resultMap = (Map<String, Object>)service.getObject(sqlMapId, paramMap);
 		}
 
 		modelandView.setViewName(viewName);
