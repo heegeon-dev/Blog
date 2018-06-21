@@ -53,6 +53,17 @@ public class MenuController {
 			service.getObject("board.insert_board_img_rel", paramMap);
 			resultList = (List<Object>) service.getList("board.read",paramMap);
 			viewName = MAPPING + "clothing";
+		}else if("clothing_edit_register".equalsIgnoreCase(action)) {
+			service.getObject("board.update_board", paramMap);
+			service.getObject("board.update_board_img", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "clothing";
+		}else if("clothing_delete_register".equalsIgnoreCase(action)) {
+			service.getObject("board.delete_board_img_rel", paramMap);
+			service.getObject("board.delete_board_img", paramMap);
+			service.getObject("board.delete_board", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "clothing";	
 		}else if("shoes_insert".equalsIgnoreCase(action)) {
 			
 		}else if("shoes_insert_register".equalsIgnoreCase(action)) {
@@ -61,6 +72,17 @@ public class MenuController {
 			service.getObject("board.insert_board_img_rel", paramMap);
 			resultList = (List<Object>) service.getList("board.read",paramMap);
 			viewName = MAPPING + "shoes";
+		}else if("shoes_edit_register".equalsIgnoreCase(action)) {
+			service.getObject("board.update_board", paramMap);
+			service.getObject("board.update_board_img", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "shoes";
+		}else if("shoes_delete_register".equalsIgnoreCase(action)) {
+			service.getObject("board.delete_board_img_rel", paramMap);
+			service.getObject("board.delete_board_img", paramMap);
+			service.getObject("board.delete_board", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "shoes";	
 		}else if("bag_insert".equalsIgnoreCase(action)) {
 			
 		}else if("bag_insert_register".equalsIgnoreCase(action)) {
@@ -69,6 +91,17 @@ public class MenuController {
 			service.getObject("board.insert_board_img_rel", paramMap);
 			resultList = (List<Object>) service.getList("board.read",paramMap);
 			viewName = MAPPING + "bag";
+		}else if("bag_edit_register".equalsIgnoreCase(action)) {
+			service.getObject("board.update_board", paramMap);
+			service.getObject("board.update_board_img", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "bag";
+		}else if("bag_delete_register".equalsIgnoreCase(action)) {
+			service.getObject("board.delete_board_img_rel", paramMap);
+			service.getObject("board.delete_board_img", paramMap);
+			service.getObject("board.delete_board", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "bag";	
 		}else if("acc_insert".equalsIgnoreCase(action)) {
 			
 		}else if("acc_insert_register".equalsIgnoreCase(action)) {
@@ -77,6 +110,17 @@ public class MenuController {
 			service.getObject("board.insert_board_img_rel", paramMap);
 			resultList = (List<Object>) service.getList("board.read",paramMap);
 			viewName = MAPPING + "acc";
+		}else if("acc_edit_register".equalsIgnoreCase(action)) {
+			service.getObject("board.update_board", paramMap);
+			service.getObject("board.update_board_img", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "acc";
+		}else if("acc_delete_register".equalsIgnoreCase(action)) {
+			service.getObject("board.delete_board_img_rel", paramMap);
+			service.getObject("board.delete_board_img", paramMap);
+			service.getObject("board.delete_board", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "acc";	
 		}else if("etc_insert".equalsIgnoreCase(action)) {
 		
 		}else if("etc_insert_register".equalsIgnoreCase(action)) {
@@ -85,6 +129,17 @@ public class MenuController {
 			service.getObject("board.insert_board_img_rel", paramMap);
 			resultList = (List<Object>) service.getList("board.read",paramMap);
 			viewName = MAPPING + "etc";
+		}else if("etc_edit_register".equalsIgnoreCase(action)) {
+			service.getObject("board.update_board", paramMap);
+			service.getObject("board.update_board_img", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "etc";
+		}else if("etc_delete_register".equalsIgnoreCase(action)) {
+			service.getObject("board.delete_board_img_rel", paramMap);
+			service.getObject("board.delete_board_img", paramMap);
+			service.getObject("board.delete_board", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "etc";	
 		}else if("news_insert".equalsIgnoreCase(action)) {
 			
 		}else if("news_edit_register".equalsIgnoreCase(action)) {
@@ -99,6 +154,12 @@ public class MenuController {
 			service.getObject("board.insert_board_img_rel", paramMap);
 			resultList = (List<Object>) service.getList("board.read",paramMap);
 			viewName = MAPPING + "news";	
+		}else if("news_delete_register".equalsIgnoreCase(action)) {
+			service.getObject("board.delete_board_img_rel", paramMap);
+			service.getObject("board.delete_board_img", paramMap);
+			service.getObject("board.delete_board", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "news";	
 		}else if("aboutMe_insert".equalsIgnoreCase(action)) {
 			
 		}else if("aboutMe_insert_register".equalsIgnoreCase(action)) {
@@ -107,6 +168,17 @@ public class MenuController {
 			service.getObject("board.insert_board_img_rel", paramMap);
 			resultList = (List<Object>) service.getList("board.read",paramMap);
 			viewName = MAPPING + "aboutMe";
+		}else if("aboutMe_edit_register".equalsIgnoreCase(action)) {
+			service.getObject("board.update_board", paramMap);
+			service.getObject("board.update_board_img", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "aboutMe";
+		}else if("aboutMe_delete_register".equalsIgnoreCase(action)) {
+			service.getObject("board.delete_board_img_rel", paramMap);
+			service.getObject("board.delete_board_img", paramMap);
+			service.getObject("board.delete_board", paramMap);
+			resultList = (List<Object>) service.getList("board.read",paramMap);
+			viewName = MAPPING + "aboutMe";	
 		}else if("acc_edit".equalsIgnoreCase(action)) {
 			resultMap = (Map<String, Object>) service.getObject("board.edit_read", paramMap);
 		}else if("aboutMe_edit".equalsIgnoreCase(action)) {

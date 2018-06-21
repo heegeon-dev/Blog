@@ -16,7 +16,7 @@
 			<input type="file" name="file">
 		</div>
 		<div class ="col-sm-11" style = "margin:2px"> 
-<!-- 			<p class="w3-right" style = "margin-left: 16px"><button class="w3-button w3-black" type = "submit"><b>DELETE</b></button></p>   -->
+			<p class="w3-right" style = "margin-left: 16px"><button class="w3-button w3-black" formaction = "<c:url value ='/menu/news_delete_register?IMG_SEQ=${resultMap.IMG_SEQ}&BOARD_SEQ=${resultMap.BOARD_SEQ}&CATEGORY_SEQ=6'/>" type = "submit"><b>DELETE</b></button></p>  
 			<p class="w3-right" style = "margin-left: 16px"><button class="w3-button w3-black" formaction = "<c:url value ='/menu/news_edit_register?IMG_SEQ=${resultMap.IMG_SEQ}&BOARD_SEQ=${resultMap.BOARD_SEQ}&CATEGORY_SEQ=6'/>" type = "submit"><b>UPDATE</b></button></p>
 		</div>  
 	</form>

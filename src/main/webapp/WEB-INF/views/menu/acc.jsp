@@ -15,7 +15,7 @@
         </div>
 
         <div class="w3-justify">
-          <a href = "<c:url value = '/menu/news_edit?BOARD_SEQ=${resultData.BOARD_SEQ}'/>"><img src="<c:url value='/resources/images/${resultData.IMG_NAME}'/>" alt="Runway" style="width:100%" class="w3-padding-16"></a>
+          <a href = "<c:url value = '/menu/acc_edit?BOARD_SEQ=${resultData.BOARD_SEQ}'/>"><img src="<c:url value='/resources/images/${resultData.IMG_NAME}'/>" alt="Runway" style="width:100%" class="w3-padding-16"></a>
           <p>${resultData.CONTENTS}</p>
           <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
           <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo2')"><b>Comments</b> <span class="w3-tag w3-white">2</span></button></p>
