@@ -8,7 +8,8 @@
    	<http auto-config="true" use-expressions="true">
     	<!-- return boolean -->
     	<csrf disabled = "true"/>
-  		<intercept-url pattern="/*/subscribeManage" access="hasRole('ROLE_USER')"/>
+  		<intercept-url pattern="/*/subscribeManage" access="hasRole('ROLE_ADMIN')"/>
+  		<intercept-url pattern="/*/insert" access="hasRole('ROLE_ADMIN')"/>
 	</http>
 	
 	<authentication-manager>
@@ -18,5 +19,4 @@
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>
- 
 </beans:beans>

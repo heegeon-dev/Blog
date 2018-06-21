@@ -75,6 +75,7 @@
 		board_img_rel(BOARD_SEQ, IMG_SEQ)
 		VALUES(SEQ_BOARD.currval, SEQ_IMG.currval)
 	</insert>
+
 	<update id = "update_board" parameterType="Map">
 		UPDATE board
 		SET TITLE = #{TITLE}, CONTENTS =#{CONTENTS}, UPLOAD_DATE = sysdate
