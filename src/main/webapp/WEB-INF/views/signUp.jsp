@@ -36,36 +36,36 @@
 </script>
       <form class="form-horizontal" role="form" action = "<c:url value ='/'/>">
          <h2>
-             <span style="color:black">회원가입</span>
+             <span style="color:black">Sign Up</span>
          </h2>
          <div class="form-group">
-            <label for="firstName" class="col-sm-2 control-label">이름</label>
+            <label for="firstName" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-9">
                <input type="text" id="firstName" name = "NAME" class="form-control">
             </div>
          </div>
          <div class="form-group">
-            <label for="text" class="col-sm-2 control-label">아이디</label>
+            <label for="text" class="col-sm-2 control-label">ID</label>
             <div class="col-sm-9">
                <input type="text" id="text" name = "ID" class="form-control" >
                <span class="help-block">아이디는 10자 이상의 영문과 숫자를 입력해 주세요.</span>
             </div>
          </div>
          <div class="form-group">
-            <label for="password" class="col-sm-2 control-label">비밀번호</label>
+            <label for="password" class="col-sm-2 control-label">PW</label>
             <div class="col-sm-9">
                <input type="password" id="password" name = "PASSWORD" class="form-control" >
                <span class="help-block"> 8~20자 이내 영문과 숫자를 입력해 주세요.</span>
             </div>
          </div>
          <div class="form-group">
-            <label for="password" class="col-sm-2 control-label">비밀번호 확인</label>
+            <label for="password" class="col-sm-2 control-label">PW2</label>
             <div class="col-sm-9">
                <input type="password" id="password2" name = "PASSWORD2" class="form-control">
             </div>
          </div>
          <div class="form-group">
-            <label for="email" class="col-sm-2 control-label">이메일</label>
+            <label for="email" class="col-sm-2 control-label">E-mail</label>
             <div class="col-sm-9">
                <input type="email" id="email" name = "EMAIL" class="form-control" >
                <span class="help-block">이메일은 아이디 또는 비밀번호를 찾기 위해 꼭 필요한 정보이므로
@@ -83,7 +83,7 @@
          <!-- /.form-group -->
          <div class="form-group">
             <div class="col-sm-9 col-sm-offset-2">
-               <button type="submit" class="w3-button w3-black">회원가입</button>
+               <button type="submit" class="w3-button w3-black">Sign up</button>
             </div>
          </div>
       </form>

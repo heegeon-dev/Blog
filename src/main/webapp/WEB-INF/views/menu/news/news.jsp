@@ -11,11 +11,11 @@
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
           <h3>${resultData.TITLE}</h3>
-          <h5>Title description, <span class="w3-opacity">${resultData.UPLOAD_DATE}</span></h5>
+          <span class="w3-opacity">${resultData.UPLOAD_DATE}</span>
         </div>
 
         <div class="w3-justify">
-          <a href = "<c:url value = '/menu/news_edit?BOARD_SEQ=${resultData.BOARD_SEQ}'/>"><img src="<c:url value='/resources/images/${resultData.IMG_NAME}'/>" alt="Runway" style="width:100%" class="w3-padding-16"></a>
+          <a href = "<c:url value = '/menu/news/edit?BOARD_SEQ=${resultData.BOARD_SEQ}'/>"><img src="<c:url value='/resources/images/${resultData.IMG_NAME}'/>" alt="Runway" style="width:100%" class="w3-padding-16"></a>
           <p>${resultData.CONTENTS}</p>
           <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
           <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo3')"><b>Comments</b> <span class="w3-tag w3-white">3</span></button></p>
