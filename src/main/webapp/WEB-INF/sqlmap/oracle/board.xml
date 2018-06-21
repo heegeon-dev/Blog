@@ -45,9 +45,17 @@
    <select id = "edit_read" resultType ="Map" parameterType= "Map">
    	
       select
+<<<<<<< HEAD
          b.title ,   <!-- 글 제목 -->
          b.contents ,      <!-- 글 내용 -->
          bi.img_name      <!-- 이미지 이름 -->
+=======
+      	 b.BOARD_SEQ,
+         b.title ,   <!-- 글 제목 -->
+         b.contents ,      <!-- 글 내용 -->
+         bi.img_name,
+         bi.IMG_SEQ      <!-- 이미지 이름 -->
+>>>>>>> branch 'master' of https://github.com/kimheegeon/Blog.git
       from BOARD b INNER JOIN board_img_rel bir
       ON b.BOARD_SEQ = bir.BOARD_SEQ
       INNER JOIN board_img bi
@@ -60,6 +68,7 @@
 	<insert id="insert_board" parameterType="Map">
 		INSERT INTO 
 		board(CATEGORY_SEQ, BOARD_SEQ, ID, TITLE, CONTENTS, UPLOAD_DATE, VIEWS) 
+<<<<<<< HEAD
 		VALUES('6',SEQ_BOARD.nextval,'Inhog',#{TITLE},#{CONTENTS},sysdate,'0')
 	</insert>
 	<insert id = "insert_board_img" parameterType="Map">
@@ -126,7 +135,32 @@
 				, #{REGISTER_SEQ} <!-- 수정자_SEQ -->
 				, sysdate <!-- 수정일자 -->
 			)
+=======
+		VALUES(#{CATEGORY_SEQ},SEQ_BOARD.nextval,'Inhog',#{TITLE},#{CONTENTS},sysdate,'0')
+>>>>>>> branch 'master' of https://github.com/kimheegeon/Blog.git
 	</insert>
+	<insert id = "insert_board_img" parameterType="Map">
+		INSERT INTO
+		board_img(IMG_SEQ,IMG_NAME)
+		VALUES(SEQ_IMG.nextval, #{file})
+	</insert>
+	<insert id = "insert_board_img_rel" parameterType="Map">
+		INSERT INTO
+		board_img_rel(BOARD_SEQ, IMG_SEQ)
+		VALUES(SEQ_BOARD.currval, SEQ_IMG.currval)
+	</insert>
+	<update id = "update_board" parameterType="Map">
+		UPDATE board
+		SET TITLE = #{TITLE}, CONTENTS =#{CONTENTS}
+		WHERE BOARD_SEQ = #{BOARD_SEQ}
+	</update>
+	<update id = "update_board_img" parameterType="Map">
+		UPDATE board_img
+		SET IMG_NAME = #{file}
+		WHERE IMG_SEQ = #{IMG_SEQ}
+	</update>
+	
+	
 
 	<delete id="delete" parameterType="Map">
 		delete from CIP_MEMBER
