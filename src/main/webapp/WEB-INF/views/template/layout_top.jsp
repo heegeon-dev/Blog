@@ -50,25 +50,10 @@ and is wrapped around the whole page content, except for the footer in this exam
         </ul>
       <ul class="nav navbar-nav navbar-right">
          <li><a href="<c:url value='/signUp/signUp'/>">Sign Up</a>
-         <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
-               		<% String userId=(String)session.getAttribute("userId"); %>
-                <%String host= request.getContextPath(); %>
-                	<%if(userId!=null){%>
-                	  <form class="form-horizontal" action="<%=host%>/Logout" 
-                	  	method="get">
-                		<%= userId %>로 로그인됨.<br>
-                		<input type="submit" onclick="<script>  </script>" value="로그아웃">
-                		  </form>
-                	<%}else{ %>
-                	
-                <form class="form-horizontal" action="<%=host%>/LoginStatus2"  method="get">
-                  <input id="sp_uname" class="form-control login" type="text" name="userId" placeholder="Username.." />
-                  <input id="sp_pass" class="form-control login" type="password" name="password" placeholder="Password.."/>
-                  <input class="btn btn-primary" type="submit" name="submit" value="login" /> 
-                </form>
-                  <%} %>
-            </li>
+		<c:set var="principalName" value="${pageContext.request.userPrincipal.name}"/>
+		<i class="fa fa-user fa-fw"></i> ${principalName} <i class="fa fa-caret-down"></i>
+		<a href="<c:url value='/j_spring_security_logout' />">Logout</a>
+         <li><a href="<c:url value='/login/LoginForm'/>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     	  </ul>
    	 </div>
   	</div>

@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.test.blog.service.etcService;
 
 @Controller
-public class etcController {
+public class EtcController {
 	
 	private final static String MAPPING = "/menu/etc/";
 

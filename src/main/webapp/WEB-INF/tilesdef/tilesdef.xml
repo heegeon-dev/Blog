@@ -29,6 +29,12 @@
 		<put-attribute name="layout.title" value="signUp"/>
 		<put-attribute name="layout.body" value="/WEB-INF/views/signUp.jsp"/>
 	</definition>
+	
+	<definition name="/LoginForm" extends="layout.admin">
+		<put-attribute name="layout.title" value="LoginForm"/>
+		<put-attribute name="layout.body" value="/WEB-INF/views/LoginForm.jsp"/>
+	</definition>
+	
 	<definition name="/menu/*" extends="layout.user">
 		<put-attribute name="layout.title" value="{1}"/>
 		<put-attribute name="layout.body" value="/WEB-INF/views/menu/{1}.jsp"/>
