@@ -32,7 +32,9 @@ public class accController {
 		Map<String,Object> commentsMap = new HashMap<String, Object>();
 		List<Object> resultList = new ArrayList<Object>();
 		List<Object> commentsList = new ArrayList<Object>();
-		
+		List<Object> HomeList = new ArrayList<Object>();
+		HomeList = (List<Object>) service.Popular_Post("", paramMap);
+
 		if("acc".equalsIgnoreCase(action)){
 			resultList = (List<Object>) service.getList(sqlMapId,paramMap);
 			commentsList=((List<Object>) service.comments_getList(sqlMapId, resultList));
@@ -67,6 +69,8 @@ public class accController {
 		modelandView.addObject("commentsMap",commentsMap);
 		modelandView.addObject("resultList",resultList);
 		modelandView.addObject("commentsList",commentsList);
+		modelandView.addObject("HomeList",HomeList);
+
 		return modelandView;
 	}
 }

@@ -15,6 +15,16 @@ public class ShareService {
 	@Autowired
 	private Sharedao dao;
 	
+	public Object Popular_Post(String sqlMapId, Object dataMap) {
+		Object resultData = (List<Object>)dao.getList("home.read",dataMap);
+		return resultData;
+	}
+	
+	public Object first_post(String sqlMapId, Object dataMap) {
+		Object resultData = (List<Object>)dao.getList("home.first_read",dataMap);
+		return resultData;
+	}
+	
 	public void delete_comments_register(String sqlMapId, Object dataMap) {
 		dao.getObject("comments.delete_comments", dataMap);
 	}

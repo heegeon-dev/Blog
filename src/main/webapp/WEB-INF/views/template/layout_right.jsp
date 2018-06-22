@@ -1,6 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <!-- About/Information menu -->
     <div class="w3-col l4">
+<c:set var="principalName" value="${pageContext.request.userPrincipal.name}"/>
+<script>
+console.log(HomeList);
+</script>
 
  <!-- Subscribe -->
       <div class="w3-white w3-margin">
@@ -15,38 +19,22 @@
       </div> 
      <hr>
 
-
       <!-- Posts -->
       <div class="w3-white w3-margin">
         <div class="w3-container w3-padding w3-black">
           <h4>Popular Posts</h4>
         </div>
+        <c:forEach items="${HomeList}" var="HomeList" varStatus="loop">
+        
         <ul class="w3-ul w3-hoverable w3-white">
           <li class="w3-padding-16">
-            <img src="<c:url value='/resources/images/avatar_smoke.jpg'/>" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Denim</span>
+            <img src="<c:url value='/resources/images/${HomeList.IMG_NAME}'/>" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">${HomeList.TITLE}</span>
             <br>
-            <span>Sed mattis nunc</span>
-          </li>
-          <li class="w3-padding-16">
-            <img src="<c:url value='/resources/images/bandmember.jpg'/>" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Sweaters</span>
-            <br>
-            <span>Praes tinci sed</span>
-          </li>
-          <li class="w3-padding-16">
-            <img src="<c:url value='/resources/images/workshop.jpg'/>" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Workshop</span>
-            <br>
-            <span>Ultricies congue</span>
-          </li>
-          <li class="w3-padding-16">
-            <img src="<c:url value='/resources/images/avatar_smoke.jpg'/>" alt="Image" class="w3-left w3-margin-right w3-sepia" style="width:50px">
-            <span class="w3-large">Trends</span>
-            <br>
-            <span>Lorem ipsum dipsum</span>
+            <span>${HomeList.CONTENTS}</span>
           </li>
         </ul>
+        </c:forEach>
       </div>
       <hr>
 

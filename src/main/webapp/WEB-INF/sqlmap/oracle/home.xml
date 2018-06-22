@@ -4,41 +4,45 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-<mapper namespace="board">
-	<select id="list" resultType="Map" parameterType="Map">
-	    select 
-			MEMBER_SEQ <!-- 회원_SEQ -->
-			, MEMBER_ID <!-- 회원 ID -->
-			, PASSWORD <!-- 암호 -->
-			, NAME <!-- 명칭 -->
-			, EMAIL <!-- EMAIL -->
-			, CELLPHONE <!-- 휴대폰번호 -->
-			, ORGANIZATION_SEQ <!-- 조직 일련번호 -->
-			, REGISTER_SEQ <!-- 등록자SEQ -->
-			, REGISTRY_DATE <!-- 등록일자 -->
-			, MODIFIER_SEQ <!-- 수정자_SEQ -->
-			, MODIFY_DATE <!-- 수정일자 -->
-		from CIP_MEMBER
-		<![CDATA[
-		where 1 = 1
-		]]>
-		order by NAME
-	</select>
-	
+<mapper namespace="home">
 	<select id="read" resultType="Map" parameterType="Map">
-   
-      select
+    select
+        b.views,
       	 b.BOARD_SEQ,
-         b.CATEGORY_SEQ, <!-- 글 카테고리 -->
-         b.title ,   <!-- 글 제목 -->
-         b.contents ,      <!-- 글 내용 -->
-         b.upload_date ,   <!-- 게시일 -->
-         bi.img_name      <!-- 이미지 이름 -->
+         b.CATEGORY_SEQ,
+         b.title ,  
+         b.contents ,     
+         b.upload_date ,   
+         bi.img_name    
       from BOARD b INNER JOIN board_img_rel bir
       ON b.BOARD_SEQ = bir.BOARD_SEQ
       INNER JOIN board_img bi
       ON bir.IMG_SEQ = bi.IMG_SEQ
-      WHERE b.CATEGORY_SEQ = #{CATEGORY_SEQ}
-      ORDER BY b.BOARD_SEQ
-   </select>
+		<![CDATA[
+		where rownum <=4
+		]]>
+      ORDER BY b.views desc
+   	</select>
+   	
+   	<select id="first_read" resultType="Map" parameterType="Map">
+	select *
+	from (
+	select
+	  b.views,
+	   b.BOARD_SEQ,
+	   b.CATEGORY_SEQ,
+	   b.title ,  
+	   b.contents ,     
+	   b.upload_date ,   
+	   bi.img_name    
+	from BOARD b INNER JOIN board_img_rel bir
+	ON b.BOARD_SEQ = bir.BOARD_SEQ
+	INNER JOIN board_img bi
+	ON bir.IMG_SEQ = bi.IMG_SEQ
+	ORDER BY b.upload_date desc
+	)
+	<![CDATA[
+	where rownum =1
+	]]>
+   	</select>
 </mapper>
