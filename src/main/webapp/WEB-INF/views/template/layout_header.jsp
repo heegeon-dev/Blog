@@ -16,19 +16,29 @@ h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
 body {font-family: "Open Sans"}
 </style>
 <script>
-// Toggle between hiding and showing blog replies/comments
-document.getElementById("myBtn").click();
-function myFunction(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
 
-function likeFunction(x) {
-    x.style.fontWeight = "bold";
-    x.innerHTML = "â Liked";
-}
+	// Toggle between hiding and showing blog replies/comments
+	document.getElementById("myBtn").click();
+	function myFunction(id) {
+		var x = document.getElementById(id);
+		if (x.className.indexOf("w3-show") == -1) {
+			x.className += " w3-show";
+		} else {
+			x.className = x.className.replace(" w3-show", "");
+		}
+	}
+
+	function likeFunction(x) {
+		
+		//      	x.style.fontWeight = "bold";
+// 		x.innerHTML = "Liked";
+		if(x.getAttribute("pen")=="true"){
+			x.setAttribute("pen","false");
+		x.innerHTML = "<b><i class='fa fa-thumbs-up'></i>Like</b>";
+		}else{
+			x.setAttribute("pen","true");		
+		x.innerHTML = "<b><i class='fa fa-thumbs-up'></i>Liked</b>";
+		}
+
+	}
 </script>
