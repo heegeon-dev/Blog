@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="comments">
+	<insert id="insert_comments" parameterType="Map">
+		INSERT INTO 
+		COMMENTS(COMMENT_SEQ, CONTENTS, ID, BOARD_SEQ) 
+		VALUES(SEQ_COMMENTS.nextval,#{CONTENTS},'Inhog',#{BOARD_SEQ})
+	</insert>
+	
+	<select id="read" resultType="Map" parameterType="Map">
+      select
+      	 b.BOARD_SEQ,
+         c.COMMENT_SEQ,
+         c.CONTENTS,   
+         ui.ID     
+      from BOARD b INNER JOIN COMMENTS c
+      ON b.BOARD_SEQ = c.BOARD_SEQ
+      INNER JOIN USER_INFO ui
+      ON c.ID = ui.ID
+      WHERE b.BOARD_SEQ = #{BOARD_SEQ}
+      ORDER BY COMMENT_SEQ
+   </select>
+   <delete id="delete_comments" parameterType="Map">
+		DELETE from COMMENTS
+		where COMMENT_SEQ = #{COMMENT_SEQ}
+	</delete>
+     
+   
+</mapper>
