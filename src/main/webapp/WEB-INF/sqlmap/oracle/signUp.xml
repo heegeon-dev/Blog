@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="signup">
+	<insert id="insert" parameterType="Map">
+		INSERT INTO 
+		USER_INFO(ID, PASSWORD, NAME, EMAIL, EMAIL_CHECK) 
+		VALUES(#{ID},#{PASSWORD},#{NAME},#{EMAIL},#{EMAIL_CHECK})
+	</insert>
+	
+	<insert id="insert_rel" parameterType="Map">
+		INSERT INTO
+		authority_rel(id,AUTHORITY_SEQ)
+		VALUES(#{ID},1)
+	</insert>
+</mapper>

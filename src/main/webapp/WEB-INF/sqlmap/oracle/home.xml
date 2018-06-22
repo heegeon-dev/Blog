@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="board">
+	<select id="list" resultType="Map" parameterType="Map">
+	    select 
+			MEMBER_SEQ <!-- 회원_SEQ -->
+			, MEMBER_ID <!-- 회원 ID -->
+			, PASSWORD <!-- 암호 -->
+			, NAME <!-- 명칭 -->
+			, EMAIL <!-- EMAIL -->
+			, CELLPHONE <!-- 휴대폰번호 -->
+			, ORGANIZATION_SEQ <!-- 조직 일련번호 -->
+			, REGISTER_SEQ <!-- 등록자SEQ -->
+			, REGISTRY_DATE <!-- 등록일자 -->
+			, MODIFIER_SEQ <!-- 수정자_SEQ -->
+			, MODIFY_DATE <!-- 수정일자 -->
+		from CIP_MEMBER
+		<![CDATA[
+		where 1 = 1
+		]]>
+		order by NAME
+	</select>
+	
+	<select id="read" resultType="Map" parameterType="Map">
+   
+      select
+      	 b.BOARD_SEQ,
+         b.CATEGORY_SEQ, <!-- 글 카테고리 -->
+         b.title ,   <!-- 글 제목 -->
+         b.contents ,      <!-- 글 내용 -->
+         b.upload_date ,   <!-- 게시일 -->
+         bi.img_name      <!-- 이미지 이름 -->
+      from BOARD b INNER JOIN board_img_rel bir
+      ON b.BOARD_SEQ = bir.BOARD_SEQ
+      INNER JOIN board_img bi
+      ON bir.IMG_SEQ = bi.IMG_SEQ
+      WHERE b.CATEGORY_SEQ = #{CATEGORY_SEQ}
+      ORDER BY b.BOARD_SEQ
+   </select>
+   
+   <select id = "edit_read" resultType ="Map" parameterType= "Map">
+   	
+      select
+      	 b.BOARD_SEQ,
+         b.title ,   <!-- 글 제목 -->
+         b.contents ,      <!-- 글 내용 -->
+         bi.img_name,  <!-- 이미지 이름 -->
+         bi.IMG_SEQ,
+         b.UPLOAD_DATE      
+      from BOARD b INNER JOIN board_img_rel bir
+      ON b.BOARD_SEQ = bir.BOARD_SEQ
+      INNER JOIN board_img bi
+      ON bir.IMG_SEQ = bi.IMG_SEQ
+      WHERE b.BOARD_SEQ = #{BOARD_SEQ}
+   </select>
+</mapper>

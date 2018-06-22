@@ -21,4 +21,10 @@ public class Sharedao {
 		return result;
 	}
 	
+	public Object signup_insert(String sqlMapId,Object dataMap) {
+		Object result = sqlSession.insert(sqlMapId,dataMap);
+		
+		return result;
+	}
+	
 }

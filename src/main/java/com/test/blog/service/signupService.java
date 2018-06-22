@@ -11,14 +11,13 @@ public class signupService {
 	@Autowired
 	private Sharedao dao;
 	
-	public Object getList(String sqlMapId, Object dataMap) {
-		Object resultData = dao.getList(sqlMapId,dataMap);
+	public Object signup_insert(String sqlMapId, Object dataMap) {
 		
-		return resultData;
-	}
-	public Object getObject(String sqlMapId, Object dataMap) {
+		String sqlId ="signup.insert"; 
+		Object resultData = dao.signup_insert(sqlId,dataMap);
 		
-		Object resultData = dao.getObject(sqlMapId,dataMap);
+		String sqlId2 ="signup.insert_rel";
+		dao.signup_insert(sqlId2, dataMap);
 		
 		return resultData;
 	}

@@ -26,15 +26,16 @@
             alert("[PW 입력오류 : 패스워드가 일치하지 않습니다. 재입력하세요.");
          }
       });
-      //전화번호 입력 창
+      //이메일 입력 창
       $("#email").blur(function(e) {
-         if (re_tel.test($("#email").val()) != true && $("#email").val().length != 0) {
+         if (re_mail.test($("#email").val()) != true && $("#email").val().length != 0) {
             alert("[이메일 입력오류 : ]");
          }
       });
    });
 </script>
-      <form class="form-horizontal" role="form" action = "<c:url value ='/'/>">
+
+      <form class="form-horizontal" role="form" action = "<c:url value ='/signUp/insert'/>" method="POST">
          <h2>
              <span style="color:black">Sign Up</span>
          </h2>
@@ -61,7 +62,7 @@
          <div class="form-group">
             <label for="password" class="col-sm-2 control-label">PW2</label>
             <div class="col-sm-9">
-               <input type="password" id="password2" name = "PASSWORD2" class="form-control">
+               <input type="password" id="password_check" name = "PASSWORD_CHECK" class="form-control">
             </div>
          </div>
          <div class="form-group">

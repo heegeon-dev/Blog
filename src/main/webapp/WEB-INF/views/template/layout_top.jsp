@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Navigation bar with social media icons -->
+<c:set var="principalName" value="${pageContext.request.userPrincipal.name}"/>
 <div class="w3-bar w3-black w3-hide-small">
   <a href="#" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
   <a href="#" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
@@ -49,12 +50,26 @@ and is wrapped around the whole page content, except for the footer in this exam
         <li><a href="<c:url value='/menu/aboutMe/aboutMe?CATEGORY_SEQ=1'/>">About me</a></li>
         </ul>
       <ul class="nav navbar-nav navbar-right">
-         <li><a href="<c:url value='/signUp/signUp'/>">Sign Up</a>
-		<c:set var="principalName" value="${pageContext.request.userPrincipal.name}"/>
-		<i class="fa fa-user fa-fw"></i> ${principalName} <i class="fa fa-caret-down"></i>
-		<a href="<c:url value='/j_spring_security_logout' />">Logout</a>
-         <li><a href="<c:url value='/login/LoginForm'/>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      	<c:choose>
+      		<c:when test="${principalName eq null}">
+      			
+      		</c:when>
+      		<c:otherwise>
+				<li><a href="<c:url value='#'/>">${principalName}</a></li>
+			</c:otherwise>
+      	</c:choose>
+        <li><a href="<c:url value='/signUp/signUp'/>">Sign Up</a>
+        <c:choose>
+        	<c:when test="${principalName eq null}">
+        		<li><a href="<c:url value='/login/LoginForm'/>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        	</c:when>
+        	<c:otherwise>
+				<li><a href="<c:url value='/j_spring_security_logout'/>">Logout</a></li>
+			</c:otherwise>
+		</c:choose>
+        </li>
     	  </ul>
    	 </div>
   	</div>
-	</nav>	
+	</nav>
+	

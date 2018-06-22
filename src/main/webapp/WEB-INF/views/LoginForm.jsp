@@ -6,6 +6,9 @@
 	<h2>
 		<span style="color: black">로그인</span>
 	</h2>
+	<c:if test="${paramMap.fail eq true}">
+		<span style="color:red">아이디와 비밀번호를 확인하세요.</span>
+	</c:if>
 	<div class="form-group">
 		<label for="firstName" class="col-sm-2 control-label">ID</label>
 		<div class="col-sm-9">
