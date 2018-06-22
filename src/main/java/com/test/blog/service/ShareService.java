@@ -1,5 +1,6 @@
 package com.test.blog.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +15,20 @@ public class ShareService {
 	@Autowired
 	private Sharedao dao;
 	
+	public void delete_comments_register(String sqlMapId, Object dataMap) {
+		dao.getObject("comments.delete_comments", dataMap);
+	}
+	
+	public void insert_comments_register(String sqlMapId, Object dataMap) {
+		dao.getObject("comments.insert_comments", dataMap);
+	}
+	public Object comments_getList(String sqlMapId, Object dataMap) {
+		List<Object> resultData = new ArrayList<Object>();
+		for(int i = 0 ; i < ((List<Object>)dataMap).size(); i++) {
+			resultData.add(dao.getList("comments.read", ((List<Object>)dataMap).get(i)));
+		}
+		return resultData;
+	}
 	public Object insert_register(String sqlMapId, Object dataMap) {
 		
 		dao.getObject("board.insert_board", dataMap);
