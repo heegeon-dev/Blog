@@ -29,10 +29,13 @@ public class EtcController {
 			ModelAndView modelandView, String sqlMapId) {
 		String viewName = MAPPING + action;
 		Map<String,Object> resultMap = new HashMap<String, Object>();
+		Map<String,Object> commentsMap = new HashMap<String, Object>();
 		List<Object> resultList = new ArrayList<Object>();
+		List<Object> commentsList = new ArrayList<Object>();
 		
 		if("etc".equalsIgnoreCase(action)){
 			resultList = (List<Object>) service.getList(sqlMapId,paramMap);
+			commentsList=((List<Object>) service.comments_getList(sqlMapId, resultList));
 		}else if("edit_register".equalsIgnoreCase(action)) {
 			resultList = (List<Object>) service.edit_register(sqlMapId, paramMap);
 			viewName = MAPPING + "etc";
@@ -46,12 +49,24 @@ public class EtcController {
 			
 		}else if("edit".equalsIgnoreCase(action)){
 			resultMap = (Map<String, Object>)service.getObject(sqlMapId, paramMap);
+		}else if("insert_comments_register".equalsIgnoreCase(action)) {
+			service.insert_comments_register(sqlMapId, paramMap);
+			resultList = (List<Object>) service.getList(sqlMapId,paramMap);
+			commentsList=((List<Object>) service.comments_getList(sqlMapId, resultList));
+			viewName = MAPPING + "etc";
+		}else if("delete_comments_register".equalsIgnoreCase(action)) {
+			service.delete_comments_register(sqlMapId, paramMap);
+			resultList = (List<Object>) service.getList(sqlMapId,paramMap);
+			commentsList=((List<Object>) service.comments_getList(sqlMapId, resultList));
+			viewName = MAPPING + "etc";
 		}
 
 		modelandView.setViewName(viewName);
 		modelandView.addObject("paramMap",paramMap);
 		modelandView.addObject("resultMap",resultMap);
+		modelandView.addObject("commentsMap",commentsMap);
 		modelandView.addObject("resultList",resultList);
+		modelandView.addObject("commentsList",commentsList);
 		return modelandView;
 	}
 }
