@@ -7,22 +7,25 @@
 <mapper namespace="home">
 
 	<select id="read" resultType="Map" parameterType="Map">
-    select
-        b.views,
-      	 b.BOARD_SEQ,
-         b.CATEGORY_SEQ,
-         b.title ,  
-         b.contents ,     
-         b.upload_date ,   
-         bi.img_name    
-      from BOARD b INNER JOIN board_img_rel bir
-      ON b.BOARD_SEQ = bir.BOARD_SEQ
-      INNER JOIN board_img bi
-      ON bir.IMG_SEQ = bi.IMG_SEQ
-		<![CDATA[
-		where rownum <=4
-		]]>
-      ORDER BY b.views desc
+    select *
+   from (
+   select
+     b.views,
+      b.BOARD_SEQ,
+      b.CATEGORY_SEQ,
+      b.title ,  
+      b.contents ,     
+      b.upload_date ,   
+      bi.img_name    
+   from BOARD b INNER JOIN board_img_rel bir
+   ON b.BOARD_SEQ = bir.BOARD_SEQ
+   INNER JOIN board_img bi
+   ON bir.IMG_SEQ = bi.IMG_SEQ
+   ORDER BY b.views desc)
+   <![CDATA[
+   where rownum <=4
+   ]]> 
+
    	</select>
    	
    	<select id="first_read" resultType="Map" parameterType="Map">

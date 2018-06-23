@@ -4,7 +4,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <script>
    $(document).ready(function() {
-      var re_id = /^[a-z0-9_-]{10,30}$/; // 아이디 검사식
+      var re_id = /^[a-z0-9_-]{6,30}$/; // 아이디 검사식
       var re_pw = /^[a-z0-9_-]{8,20}$/; // 비밀번호 검사식
       var re_mail = /^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/; // 이메일 검사식
       var re_tel = /^[0-9]{8,11}$/; // 전화번호 검사식
@@ -49,7 +49,7 @@
             <label for="text" class="col-sm-2 control-label">ID</label>
             <div class="col-sm-9">
                <input type="text" id="text" name = "ID" class="form-control" >
-               <span class="help-block">아이디는 10자 이상의 영문과 숫자를 입력해 주세요.</span>
+               <span class="help-block">아이디는 6자 이상의 영문과 숫자를 입력해 주세요.</span>
             </div>
          </div>
          <div class="form-group">
