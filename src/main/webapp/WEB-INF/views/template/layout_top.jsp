@@ -36,7 +36,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="<c:url value='/home'/>">Home</a></li>
+        <li><a href="<c:url value='/'/>">Home</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Fashion <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<c:url value='/menu/clothing/clothing?CATEGORY_SEQ=4'/>">Clothing</a></li>

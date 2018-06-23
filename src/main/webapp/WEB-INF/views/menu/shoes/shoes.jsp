@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
+<c:set var="principalName" value="${pageContext.request.userPrincipal.name}"/>
+
 	<div class="w3-col l8 s12">
     	<p class="w3-left" style = "margin-left: 16px"><a href="<c:url value = '/menu/shoes/insert'/>"><button class="w3-button w3-black" ><b>POST</b></button></a></p>
  	</div>
@@ -44,7 +46,7 @@
       </div>
       <hr>
       
-<form class="form-horizontal" role="form" method="post" action="<c:url value ='/menu/shoes/insert_comments_register?BOARD_SEQ=${resultData.BOARD_SEQ}&CATEGORY_SEQ=${resultData.CATEGORY_SEQ}'/>">
+<form class="form-horizontal" role="form" method="post" action="<c:url value ='/menu/shoes/insert_comments_register?BOARD_SEQ=${resultData.BOARD_SEQ}&CATEGORY_SEQ=${resultData.CATEGORY_SEQ}&ID=${principalName}'/>">
 	<div class="form-group">
 		<label for="message" class="col-sm-2 control-label">Contents</label>
 		<div class="col-sm-9">
