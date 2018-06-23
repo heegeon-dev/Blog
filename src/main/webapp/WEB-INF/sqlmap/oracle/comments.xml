@@ -26,6 +26,11 @@
 		DELETE from COMMENTS
 		where COMMENT_SEQ = #{COMMENT_SEQ}
 	</delete>
-     
+   
+   <delete id="delete_board_comments" parameterType="Map">
+		DELETE from COMMENTS
+		where BOARD_SEQ = #{BOARD_SEQ}
+	</delete>
+   
    
 </mapper>

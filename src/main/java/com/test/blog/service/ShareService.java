@@ -57,6 +57,7 @@ public class ShareService {
 	}
 	public Object delete_register(String sqlMapId, Object dataMap) {
 		
+		dao.getObject("delete_board_comments", dataMap);
 		dao.getObject("board.delete_board_img_rel", dataMap);
 		dao.getObject("board.delete_board_img", dataMap);
 		dao.getObject("board.delete_board", dataMap);
