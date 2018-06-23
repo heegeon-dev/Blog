@@ -57,6 +57,7 @@ public class ShareService {
 	}
 	public Object delete_register(String sqlMapId, Object dataMap) {
 		
+		dao.getObject("delete_board_comments", dataMap);
 		dao.getObject("board.delete_board_img_rel", dataMap);
 		dao.getObject("board.delete_board_img", dataMap);
 		dao.getObject("board.delete_board", dataMap);
@@ -65,6 +66,7 @@ public class ShareService {
 	}
 	
 	public Object getList(String sqlMapId, Object dataMap) {
+		dao.getObject("board.update_view",dataMap);
 		Object resultData = (List<Object>)dao.getList("board.read",dataMap);
 		return resultData;
 	}

@@ -11,7 +11,7 @@
       //아이디 입력 창
       $("#text").blur(function(e) {
          if (re_id.test($("#text").val()) != true && $("#text").val().length != 0 ) {
-            alert("[ID 입력오류 : 10자 이상 영문과 숫자를 입력해주세요.]");
+            alert("[ID 입력오류 : 6자 이상 영문과 숫자를 입력해주세요.]");
          }
       });
       //비밀번호 입력창
