@@ -135,6 +135,11 @@
 		SET IMG_NAME = #{file}
 		WHERE IMG_SEQ = #{IMG_SEQ}
 	</update>
+	<update id = "update_view" parameterType="Map">
+		UPDATE board
+		SET views = views+1
+		WHERE CATEGORY_SEQ = #{CATEGORY_SEQ}
+	</update>
 	<delete id="delete_board_img_rel" parameterType="Map">
 		delete from BOARD_IMG_REL
 		where BOARD_SEQ = #{BOARD_SEQ}

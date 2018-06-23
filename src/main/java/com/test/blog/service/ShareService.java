@@ -65,6 +65,7 @@ public class ShareService {
 	}
 	
 	public Object getList(String sqlMapId, Object dataMap) {
+		dao.getObject("board.update_view",dataMap);
 		Object resultData = (List<Object>)dao.getList("board.read",dataMap);
 		return resultData;
 	}
